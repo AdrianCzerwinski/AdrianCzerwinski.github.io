@@ -150,27 +150,27 @@ $(function() {
 	/**
 		Header Switcher Button
 	**/
-	var skin = $.cookie('skin');
+	var skin = 'dark';
 	if ( skin === 'dark' ) {
 		$('body').removeClass('light-skin');
 	}
 	if ( skin === 'light' ) {
-		$('body').addClass('light-skin');
+		$('body').addClass('dark-skin');
 	}
 
-	if ( $('body').hasClass('light-skin') ) {
+	if ( $('body').hasClass('dark-skin') ) {
 		$('.header .switcher-btn').addClass('active');
 	}
 	$('.header').on('click', '.switcher-btn', function(){
 		if($(this).hasClass('active')) {
 			$(this).removeClass('active');
-			$('body').removeClass('light-skin');
+			$('body').removeClass('dark-skin');
 			$.cookie('skin', 'dark', { expires: 7, path: '/' });
 		}
 		else {
 			$(this).addClass('active');
-			$('body').addClass('light-skin');
-			$.cookie('skin', 'light', { expires: 7, path: '/' });
+			$('body').addClass('dark-skin');
+			$.cookie('skin', 'dark', { expires: 7, path: '/' });
 		}
 		return false;
 	});
